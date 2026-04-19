@@ -2,7 +2,7 @@ package apperror
 
 import "errors"
 
-// HTTP Error codes
+// Internal Error codes
 const (
 	ErrorCodeBadRequest            = 1000
 	ErrorCodeMissingField          = 1001
