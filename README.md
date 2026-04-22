@@ -7,13 +7,10 @@ A small Go REST API for managing private market funds, investors, and investment
 1. Prerequisites:
 - Install and/or have docker running on your machine
 
-2. Copy or verify environment values in `.env`:
+2. Copy `.env.example` to `.env`:
 
-```env
-POSTGRES_DB=markets_db
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-DATABASE_URL=postgres://postgres:postgres@postgres:5432/markets_db
+```bash
+cp .env.example .env
 ```
 
 3. Start the application:
