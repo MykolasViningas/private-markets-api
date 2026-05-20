@@ -40,13 +40,13 @@ type CreateInvestmentRequest struct {
 }
 
 type Handler struct {
-	fundService       *service.FundService
-	investorService   *service.InvestorService
-	investmentService *service.InvestmentService
+	fundService       service.FundServiceInterface
+	investorService   service.InvestorServiceInterface
+	investmentService service.InvestmentServiceInterface
 	logger            *slog.Logger
 }
 
-func NewHandler(fundService *service.FundService, investorService *service.InvestorService, investmentService *service.InvestmentService, logger *slog.Logger) *Handler {
+func NewHandler(fundService service.FundServiceInterface, investorService service.InvestorServiceInterface, investmentService service.InvestmentServiceInterface, logger *slog.Logger) *Handler {
 	return &Handler{
 		fundService:       fundService,
 		investorService:   investorService,

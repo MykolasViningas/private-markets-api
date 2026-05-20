@@ -12,6 +12,13 @@ import (
 	"github.com/google/uuid"
 )
 
+type FundServiceInterface interface {
+	List(ctx context.Context) ([]model.Fund, error)
+	Create(ctx context.Context, name string, vintageYear int, targetSizeUSD float64, status string) (model.Fund, error)
+	Update(ctx context.Context, id string, name string, vintageYear int, targetSizeUSD float64, status string) (model.Fund, error)
+	Get(ctx context.Context, id string) (model.Fund, error)
+}
+
 type FundService struct {
 	repo repository.Repository
 }
