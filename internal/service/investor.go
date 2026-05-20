@@ -11,6 +11,12 @@ import (
 	"private-markets-api/internal/repository"
 )
 
+type InvestorServiceInterface interface {
+	List(ctx context.Context) ([]model.Investor, error)
+	Create(ctx context.Context, name string, investorType string, email string) (model.Investor, error)
+	Get(ctx context.Context, id string) (model.Investor, error)
+}
+
 type InvestorService struct {
 	repo repository.Repository
 }

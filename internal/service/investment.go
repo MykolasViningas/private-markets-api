@@ -11,6 +11,11 @@ import (
 	"github.com/google/uuid"
 )
 
+type InvestmentServiceInterface interface {
+	GetInvestmentsByFundID(ctx context.Context, fundID string) ([]model.Investment, error)
+	CreateInvestment(ctx context.Context, fundID string, investorID string, amountUSD float64, investmentDate string) (model.Investment, error)
+}
+
 type InvestmentService struct {
 	repo repository.Repository
 }
